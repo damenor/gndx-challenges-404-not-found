@@ -13,6 +13,7 @@ export default {
 <style scoped>
   .not-found__header {
     padding: 0 2rem;
+    animation: var(--animation-fade-in);
   }
   @media (max-width: 940px) {
     .not-found__header {

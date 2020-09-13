@@ -2,7 +2,7 @@
   <div class="not-found__container">
 
     <div class="not-found__container-image">
-      <img src="../../assets/images/Scarecrow.png" alt="scarecrow"/>
+      <img v-bind:src="image" alt="scarecrow"/>
     </div>
     
     <div class="not-found__container-text">
@@ -17,9 +17,16 @@
 </template>
 
 <script>
-export default {
-  name: 'NotFoundContainer'
-}
+
+  import image from '../../assets/images/Scarecrow.png'
+
+  export default {
+    name: 'NotFoundContainer',
+    data() {
+      return { image }
+    }
+  }
+
 </script>
 
 <style scoped>
@@ -37,6 +44,7 @@ export default {
     flex: 1;
     height: 100%;
     padding: 4rem;
+    animation: var(--animation-fade-in);
   }
 
   .not-found__container-image {
@@ -54,7 +62,7 @@ export default {
 
   .not-found__container-text h3 {
     margin: 0;
-    color: #ff6b6b;
+    color: var(--color-danger);
     font-size: 6rem;
     font-family: 'Creepster', cursive;
   }
@@ -62,7 +70,7 @@ export default {
   .not-found__container-text p {
     max-width: 24rem;
     margin: 3rem 0;
-    color: #666;
+    color: var(--color-grey);
     font-size: 2rem;
     line-height: 2.5rem;
   }
@@ -70,9 +78,9 @@ export default {
   .not-found__container-text button {
     max-width: 15rem;
     padding: 2rem;
-    color: #f2f2f2;
+    color: var(--color-light);
     text-transform: uppercase;
-    background-color: #333;
+    background-color: var(--color-dark);
     border: none;
     cursor: pointer;
     transition: all .2s;
@@ -82,7 +90,6 @@ export default {
     padding: 1.5rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-    background-color: #444;
     transform: scale(0.95);
   }
 
